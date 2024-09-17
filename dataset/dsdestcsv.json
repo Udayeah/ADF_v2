@@ -1,0 +1,24 @@
+{
+	"name": "dsdestcsv",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "TestAggr.csv",
+				"folderPath": "Dailyfile",
+				"container": "containerfortest"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
