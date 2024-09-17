@@ -1,0 +1,17 @@
+{
+	"name": "azDB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "udayss.database.windows.net",
+			"database": "udayDBSQLserver",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "adminuser",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEYzQUYyQzYwLTE5MEYtNEZCOS05NTBCLTU5MTlFMkEyMzFCQV8wN2RjMWM0NS02OGU3LTQ1NTEtYmU3Yy1kNWE4YjNlZjI4NGEiDQp9"
+		}
+	}
+}
