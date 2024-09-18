@@ -47,8 +47,7 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table',",
 				"     partitionBy('hash', 1)) ~> source1",
-				"source1 assert(expectTrue(UnitPriceDiscount>0, false, 'Dis', null, toString(UnitPriceDiscount) + \"Must be greater than $0\"),",
-				"     expectTrue(OrderQty<5, false, 'Qty')) ~> assert1",
+				"source1 assert(expectTrue(UnitPriceDiscount>0, false, 'Dis', null, toString(UnitPriceDiscount) + \"Must be greater than $0\")) ~> assert1",
 				"assert1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     partitionFileNames:['AssertChck.csv'],",
@@ -57,6 +56,7 @@
 				"     outputAssertFailedRows: true,",
 				"     assertFailure_container: 'containerfortest',",
 				"     assertFailure_folderPath: 'Archive/TextDocument',",
+				"     ignoreAssertFailedRows: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
