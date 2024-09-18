@@ -1,0 +1,23 @@
+{
+	"name": "dssrczip",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azblob",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "archive.zip",
+				"folderPath": "Dailyfile/DummyFolder",
+				"container": "containerfortest"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Optimal"
+			}
+		}
+	}
+}
