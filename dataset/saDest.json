@@ -12,6 +12,10 @@
 				"type": "AzureBlobStorageLocation",
 				"folderPath": "Dailyfile",
 				"container": "containerfortest"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Optimal"
 			}
 		}
 	}
