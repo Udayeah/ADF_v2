@@ -12,13 +12,22 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dsdestcsv",
+						"type": "DatasetReference"
+					},
+					"name": "sink1",
+					"rejectedDataLinkedService": {
+						"referenceName": "azblob",
+						"type": "LinkedServiceReference"
+					}
+				}
+			],
 			"transformations": [
 				{
 					"name": "assert1"
-				},
-				{
-					"name": "derivedColumn1"
 				}
 			],
 			"scriptLines": [
@@ -38,8 +47,17 @@
 				"     isolationLevel: 'READ_UNCOMMITTED',",
 				"     format: 'table',",
 				"     partitionBy('hash', 1)) ~> source1",
-				"source1 assert(expectTrue(UnitPriceDiscount>0, false, 'Dis', null, toString(UnitPriceDiscount) + \"Must be greater than $0\")) ~> assert1",
-				"assert1 derive(Test = ProductID) ~> derivedColumn1"
+				"source1 assert(expectTrue(UnitPriceDiscount>0, false, 'Dis', null, toString(UnitPriceDiscount) + \"Must be greater than $0\"),",
+				"     expectTrue(OrderQty<5, false, 'Qty')) ~> assert1",
+				"assert1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['AssertChck.csv'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     outputAssertFailedRows: true,",
+				"     assertFailure_container: 'containerfortest',",
+				"     assertFailure_folderPath: 'Archive/TextDocument',",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}
