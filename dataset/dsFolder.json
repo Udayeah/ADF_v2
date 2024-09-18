@@ -19,7 +19,7 @@
 					"value": "@dataset().filenm",
 					"type": "Expression"
 				},
-				"folderPath": "Dailyfile/archive.zip/archive",
+				"folderPath": "Dailyfile/DummyFolder",
 				"container": "containerfortest"
 			}
 		}
