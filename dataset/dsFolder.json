@@ -19,12 +19,8 @@
 					"value": "@dataset().filenm",
 					"type": "Expression"
 				},
-				"folderPath": "Dailyfile/DummyFolder",
+				"folderPath": "Dailyfile/archive.zip/archive",
 				"container": "containerfortest"
-			},
-			"compression": {
-				"type": "ZipDeflate",
-				"level": "Optimal"
 			}
 		}
 	}
