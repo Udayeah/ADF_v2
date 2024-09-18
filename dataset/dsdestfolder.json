@@ -10,8 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Yatra.csv",
-				"folderPath": "Dailyfile",
+				"folderPath": "Uday",
 				"container": "containerfortest"
 			}
 		}
