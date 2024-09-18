@@ -1,0 +1,31 @@
+{
+	"name": "dsFolder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azblob",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"filenm": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().filenm",
+					"type": "Expression"
+				},
+				"folderPath": "Dailyfile/DummyFolder",
+				"container": "containerfortest"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Optimal"
+			}
+		}
+	}
+}
