@@ -19,21 +19,17 @@
 						"type": "BinarySource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"deleteFilesAfterCompletion": false
+							"recursive": true
 						},
 						"formatSettings": {
-							"type": "BinaryReadSettings",
-							"compressionProperties": {
-								"type": "ZipDeflateReadSettings"
-							}
+							"type": "BinaryReadSettings"
 						}
 					},
 					"sink": {
 						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings",
-							"copyBehavior": "FlattenHierarchy"
+							"copyBehavior": "PreserveHierarchy"
 						}
 					},
 					"enableStaging": false
@@ -43,17 +39,14 @@
 						"referenceName": "dsFolder",
 						"type": "DatasetReference",
 						"parameters": {
-							"filenm": "archive.zip"
+							"filenm": "SampleJSON.json"
 						}
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "dsFolder",
-						"type": "DatasetReference",
-						"parameters": {
-							"filenm": "Sample"
-						}
+						"referenceName": "saDest",
+						"type": "DatasetReference"
 					}
 				]
 			}
