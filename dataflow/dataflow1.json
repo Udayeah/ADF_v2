@@ -56,7 +56,6 @@
 				"     outputAssertFailedRows: true,",
 				"     assertFailure_container: 'containerfortest',",
 				"     assertFailure_folderPath: 'Archive/TextDocument',",
-				"     ignoreAssertFailedRows: true,",
 				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
